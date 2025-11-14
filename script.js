@@ -44,8 +44,9 @@ async function sendMessage() {
     if (json.error) {
       conversation.push({ role: 'assistant', text: 'Error: ' + json.error });
     } else {
-      conversation.push({ role: 'assistant', text: json.reply || 'No reply' });
-      speak(json.reply || 'No reply');
+      const reply = json.reply || 'No reply';
+      conversation.push({ role: 'assistant', text: reply });
+      speak(reply);
     }
     render(); save();
   } catch (err) {

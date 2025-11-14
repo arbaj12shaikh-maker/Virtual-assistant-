@@ -1,6 +1,18 @@
 {
   "version": 2,
+  "functions": {
+    "api/assistant.js": {
+      "runtime": "edge"
+    }
+  },
   "routes": [
-    { "src": "/api/assistant", "dest": "/api/assistant.js" }
+    {
+      "src": "/api/assistant",
+      "dest": "/api/assistant.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
   ]
 }
